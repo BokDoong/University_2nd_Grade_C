@@ -1,0 +1,28 @@
+포인터 : 주소를 저장 -> 크기 마음대로 가능
+<포인터 배열 - 정수>   						     <포인터 배열 구조(스택형태)>
+int ary1[4] = {1, 2, 3, 4};					  *ptr_ary[2] = 21, 22, 23, 24	
+int ary2[4] = {11, 12, 13, 14};				       ->ptr_ary[2]는 첫자리인 "21"의 주소를 가리킨다.
+int ary3[4] = {21, 22, 23, 24};					 ->*ptr_ary[2]+1 : 22, 	*ptr_ary[2]+2 : 23, ..		
+int *ptr_ary[3] = {ary1, ary2, ary3}         = >	  *ptr_ary[1] = 11, 12, 13, 14
+                                           		        *ptr_ary[0] = 1, 2, 3, 4
+
+<포인터 배열 - 문자>
+포인터배열 : 포인터들을 모아 배열로 만든 것 
+char * ptr_array[5]
+형태 : char* char* char* char* char* => 문자형 포인터가 5개인 배열
+ptr_ary[i] = 각 문자(원소)의 첫 자리를 가리킴 .
+ptr_ary + i : 주소를 출력 -> *(ptr_ary+i) 로 값을 출력해야함. 
+ptr_ary[i] : 값을 출력 
+
+문자배열 : 값을 저장
+<문자배열 초기화>
+char animal[5][20] = {"moneky", "elephant", "ant", "turtle", "tiger"};
+=> animal[개수][길이]  
+=> 마지막 자리 뒤에 NULL자동저장
+=> animal[#] -> 각 자리(#)의 첫번째 문자의 주소가 자동저장.(기초 문자열 파일 참고)
+<문자배열 구조(animal)>
+animal[4] = tiger\0
+animal[3] = turtle\0
+animal[2] = ant\0
+animal[1] = elephant\0
+animal[0] = monkey\0
